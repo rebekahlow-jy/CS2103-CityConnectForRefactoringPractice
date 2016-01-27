@@ -216,6 +216,11 @@ public class CityConnect {
 			return String.format(MESSAGE_INVALID_FORMAT, userCommand);
 		}
 
+		return getCalculatedDistance(parameters);
+
+	}
+
+	private static String getCalculatedDistance(String[] parameters) {
 		String newStartLocation = parameters[PARAM_POSITION_START_LOCATION];
 		String newEndLocation = parameters[PARAM_POSITION_END_LOCATION];
 
@@ -227,7 +232,6 @@ public class CityConnect {
 			return String.format(MESSAGE_DISTANCE, newStartLocation, newEndLocation,
 					route[position][STORAGE_POSITION_DISTANCE]);
 		}
-
 	}
 
 	/**
