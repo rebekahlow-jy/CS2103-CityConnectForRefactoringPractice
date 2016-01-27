@@ -319,12 +319,17 @@ public class CityConnect {
 	private static boolean sameRoute(String startPointA, String endPointA, String startPointB,
 			String endPointB) {
 
-		if ((startPointA == null) || (endPointA == null) && (startPointB == null) || (endPointB == null)) {
-			throw new Error("Route end points cannot be null");
-		}
+		handleNullRoutePoints(startPointA, endPointA, startPointB, endPointB);
 
 		return (startPointA.equalsIgnoreCase(startPointB) && endPointA.equalsIgnoreCase(endPointB))
 				|| (startPointA.equalsIgnoreCase(endPointB) && endPointA.equalsIgnoreCase(startPointB));
+	}
+
+	private static void handleNullRoutePoints(String startPointA, String endPointA, String startPointB,
+			String endPointB) throws Error {
+		if ((startPointA == null) || (endPointA == null) && (startPointB == null) || (endPointB == null)) {
+			throw new Error("Route end points cannot be null");
+		}
 	}
 
 	private static boolean isPositiveNonZeroInt(String s) {
