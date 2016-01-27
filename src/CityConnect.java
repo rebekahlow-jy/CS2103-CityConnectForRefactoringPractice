@@ -321,6 +321,10 @@ public class CityConnect {
 
 		handleNullRoutePoints(startPointA, endPointA, startPointB, endPointB);
 
+		return isSameRoute(startPointA, endPointA, startPointB, endPointB);
+	}
+
+	private static boolean isSameRoute(String startPointA, String endPointA, String startPointB, String endPointB) {
 		return (startPointA.equalsIgnoreCase(startPointB) && endPointA.equalsIgnoreCase(endPointB))
 				|| (startPointA.equalsIgnoreCase(endPointB) && endPointA.equalsIgnoreCase(startPointB));
 	}
