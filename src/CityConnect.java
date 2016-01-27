@@ -182,6 +182,10 @@ public class CityConnect {
 	private static COMMAND_TYPE determineCommandType(String commandTypeString) {
 		handleNullCommandError(commandTypeString);
 
+		return classifyValidCommandType(commandTypeString);
+	}
+
+	private static COMMAND_TYPE classifyValidCommandType(String commandTypeString) {
 		if (commandTypeString.equalsIgnoreCase("addroute")) {
 			return COMMAND_TYPE.ADD_ROUTE;
 		} else if (commandTypeString.equalsIgnoreCase("getdistance")) {
