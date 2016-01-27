@@ -33,6 +33,7 @@ import java.util.Scanner;
  */
 public class CityConnect {
 
+	
 	/*
 	 * ==============NOTE TO STUDENTS======================================
 	 * These messages shown to the user are defined in one place for convenient
@@ -48,7 +49,8 @@ public class CityConnect {
 	private static final String MESSAGE_INVALID_FORMAT = "invalid command format :%1$s";
 	private static final String WELCOME_MESSAGE = "Welcome to SimpleRouteStore!";
 	private static final String MESSAGE_NO_SPACE = "No more space to store locations";
-
+	private static final String MESSAGE_NULL_COMMAND_TYPE = "command type string cannot be null!";
+	
 	// These are the possible command types
 	enum COMMAND_TYPE {
 		ADD_ROUTE, GET_DISTANCE, INVALID, EXIT
@@ -198,7 +200,7 @@ public class CityConnect {
 
 	private static void handleNullCommandError(String commandTypeString) throws Error {
 		if (commandTypeString == null)
-			throw new Error("command type string cannot be null!");
+			throw new Error(MESSAGE_NULL_COMMAND_TYPE);
 	}
 
 	/**
