@@ -104,12 +104,17 @@ public class CityConnect {
 
 	private static void beginEnterCommandLoop() {
 		while (true) {
-			System.out.print("Enter command:");
-			String command = scanner.nextLine();
-			String userCommand = command;
+			String userCommand = userEnterCommand();
 			String feedback = executeCommand(userCommand);
 			showToUser(feedback);
 		}
+	}
+
+	private static String userEnterCommand() {
+		System.out.print("Enter command:");
+		String command = scanner.nextLine();
+		String userCommand = command;
+		return userCommand;
 	}
 
 	/*
